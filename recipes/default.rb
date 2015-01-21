@@ -15,10 +15,10 @@
 
 node[:mkdir].each do |dir|
 	Chef::Log.info("Creating directory #{dir["path"]}")
-	directory dir["path"] do
-		owner dir["owner"] if dir["owner"]
-		group dir["group"] if dir["group"]
-		mode dir["mode"] if dir["mode"]
+	directory "#{dir['path']}" do
+		owner "#{dir['owner']" if dir["owner"]
+		group "#{dir['group']" if dir["group"]
+		mode "#{dir['mode']" if dir["mode"]
 		action :create
 	end
 end if node['mkdir']
