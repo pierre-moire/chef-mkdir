@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-for dir in node['mkdir']
+node[:mkdir].each do |dir|
 	Chef::Log.info("Creating directory #{dir["path"]}")
 	directory dir["path"] do
 		owner dir["owner"] if dir["owner"]
